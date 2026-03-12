@@ -1,0 +1,760 @@
+@charset "utf-8";
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* 横方向のはみ出しを一切禁止する */
+}
+body {
+    font-family:'Zen Kaku Gothic New';
+    font-size: 12px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 横方向のはみ出しを一切禁止する */
+    
+}
+hr {
+    width: 223px;
+    background-color: black;
+    margin: 20px auto;
+}
+
+img {
+    max-width: 100%;
+}
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+h3 {
+    margin: 15px;
+}
+.accessP2,
+.accessP3,
+.accessP4,
+.accessP5 {
+    line-height: 1.8;
+}
+.socialIcons {
+  /* アイコン全体を縦に並べるためのFlexbox設定 */
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  align-items: flex-start; /* 左寄せ */
+  position: absolute; /* 親要素を基準に配置する場合 */
+  bottom: 80px; /* 例として上からの位置 */
+  left: 20px; /* 例として左からの位置 */
+  z-index: 10; /* 他のコンテンツの上に表示 */
+}
+.socialIcons a {
+  margin-bottom: 15px; /* アイコン間の縦の間隔 */
+  display: block;
+}
+.icon {
+  width: 35px; /* アイコンの幅の指定 */
+  height: 35px; /* アイコンの高さの指定 */
+  /* 必要に応じて、アイコンを背景に馴染ませるための調整 */
+  /* filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); */
+}
+
+/* --- ナビゲーション --- */
+.breadcrumbNav {
+  padding: 8px 15px; /* 上下のパディングで高さ調整 */
+  border-radius: 0; /* 角丸はなし */
+  /* 画像の表示に合わせて、枠線や影は省略しています */
+}
+
+/* --- リスト全体のスタイル --- */
+.breadcrumbList {
+  display: flex; /* Flexboxで子要素を横並びに */
+  list-style: none; /* リストの点（・）を削除 */
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 各リスト項目のスタイル --- */
+.breadcrumbItem {
+  display: flex; /* リンクと区切り記号を中央に揃える */
+  align-items: center;
+  font-size: 14px; /* フォントサイズ */
+  color: black; /* テキスト全体の色を黒に（リンク以外の部分に適用） */
+}
+
+/* --- 区切り記号（>）のスタイル --- */
+/* 最後の項目以外の後ろに '>' を挿入 */
+.breadcrumbItem:not(:last-child)::after {
+  content: ">";
+  color: black; /* 区切り文字の色も白 */
+  margin: 0 5px; /* 区切り記号の左右の余白 */
+}
+
+/* --- リンク（<a>タグ）のスタイル --- */
+.breadcrumbItem a {
+  text-decoration: none; /* 下線を削除 */
+  color: black; /* リンクのテキストを白に */
+  transition: color 0.2s; /* ホバー時の変化を滑らかに */
+}
+
+/* ホバー時のスタイル（オプション） */
+.breadcrumbItem a:hover {
+  color: gray; /* グレーに変更 */
+}
+
+/* --- 現在のページ（最終項目）のスタイル --- */
+.breadcrumbItem.current {
+  /* リンクではないため、そのまま黒で表示されます */
+  font-weight: bold; /* 現在地を強調*/
+}
+
+
+.taipeiPage header {
+    background: url(../images/ヒーローフル台北画像.png) center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.headerLogo {
+    width: 111px;
+    height: 45px;
+    position: absolute;
+    top: 3px;
+    left: 20px;
+}
+.mainLogo {
+    width: 199px;
+    height: 375px;
+    position: absolute;
+    top:120px;
+    left: 88px;
+}
+
+.topSec {
+    font-size: 12px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 10px;
+    right: 0; 
+    line-height: 1.6;  
+}
+
+.AttrctionSec {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+.MainImageBox {
+    margin: 30px 10px;
+}
+
+.AttractionText {
+    
+    line-height: 19.2px;
+}
+.subGazou {
+    display: flex;
+    width: 275px;
+    gap: 20px;      /* 画像の間隔 */
+    margin: 20px auto;
+}
+.subGazou img {
+    width: 50%;
+    object-fit: cover;
+}
+.AttrctionSec p {
+    background-color: #6CBAD833;
+}
+h1 {
+    background: url(../images/redFrame.png) center/contain no-repeat ;
+    height: 40px;
+    color: #000;
+    margin: 20px auto; /* ページの真ん中に表示したい場合 */
+}
+
+.englishText {
+    font-size: 24px;
+}
+.japaneseText {
+    font-size: 12px;
+}
+.taipei101mainGazou {
+    margin: 20px auto;
+}
+.NightMarketSec {
+    width: 295px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.NightMarketSec img {
+    width: 183px;
+    padding: 20px 15px 10px;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 29px;      /* 画像の間隔 */
+  width: 350px;   /* 必要に応じて調整 */
+}
+.recommend {
+    line-height: 19.2px;
+}
+.taipeiText {
+    line-height: 19.2px;
+}
+.taipeiText {
+    line-height: 19.2px;
+}
+.NightMarketText {
+    line-height: 19.2px;
+}
+/* モーダルの基本設定 */
+
+.modal {
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background: rgba(0,0,0,0.6);
+display: flex;
+justify-content: center;
+align-items: center;
+opacity: 0;/* 透明度　0（完全に透明で見えない） */
+pointer-events: none;/* 触っても反応しない（クリックできない） */
+transition: opacity 0.3s ease;
+}
+.modal.active {
+opacity: 1;/* 透明度　1（完全に見える、不透明） */
+pointer-events: auto;/* 普通に反応する（クリックできる） */
+}
+/* .modal.activeの解説！
+ジャバスクリプトの25行目「targetModal.classList.add('active'); 」は
+最初の HTML はこう（active なし）
+・<div id="modal1" class="modal">
+ボタンを押したら JavaScript でこうなる
+・<div id="modal1" class="modal active">
+➡ この瞬間、CSS の .modal.active が効く！
+
+*/
+
+
+.modalContent {
+width: 375px;
+background: #0180BE;
+padding: 20px;
+border-radius: 12px;
+transform: translateY(40px);
+transition: transform 0.3s ease;
+color: #fff;
+}
+.modal.active .modalContent {
+transform: translateY(0);
+}
+.closeBtn {
+background: none;
+border: none;
+font-size: 24px;
+color: white;
+position: absolute;
+right: 16px;
+top: 16px;
+}
+.title {
+font-size: 24px;
+text-align: center;
+margin-bottom: 16px;
+}
+.text {
+font-size: 12px;
+line-height: 19.2px;
+margin-top: 8px;
+text-align: left;
+/* 不自然な文字切れによる改行を防止 */
+word-break: normal; 
+/* 補助的にこれも追記推奨 */
+overflow-wrap: break-word;
+}
+.text2 {
+    font-size: 12px;
+    line-height: 19.2px;
+    margin-top: 8px;
+}
+.infoImg {
+width: 100%;
+height: 223px;
+border-radius: 8px;
+margin-bottom: 12px;
+object-fit: cover;
+}
+
+
+
+.item {
+  width: 131.5px;
+  height: 48px;
+  background: url(../images/btnFrame.png) center/contain no-repeat;
+  display: flex;
+  align-items: center;   /* 上下中央 */
+  justify-content: center; /* 左右中央 */
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+/* ホバー時の強調スタイル */
+
+.item:hover {
+    /* 文字をグレーにする */
+    color: gray; 
+    /*  ドロップシャドウで光っているような効果 */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    /* 少しだけ上に移動させて浮き上がっているように見せる */
+    transform: translateY(-2px);
+    /* カーソルをポインターに変更 */
+    cursor: pointer;
+}
+
+.AccessSec {
+    width: 223px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.accessP2 {
+    text-align: left;
+}
+
+.accessP3 {
+    text-align: left;
+}
+.accessP4 {
+    text-align: left;
+}
+.accessP5 {
+    text-align: left;
+}
+.accessGazou {
+    width: 335px;
+}
+h3 {
+    text-align: left;
+}
+
+.yuyucard {
+    width: 95px;
+    padding-bottom: 50px;
+    margin-top: 20px;
+}
+/* フッター部分の修飾 */
+.toTopLink {
+    /* ボタン全体を画面の右下に固定する */
+    position: fixed;
+    right: 20px; 
+    bottom: 20px; 
+    z-index: 999; 
+    cursor: pointer;
+}
+.toTopIcon {
+    position:fixed ;
+    bottom: 60px ;
+    width:48px;
+    height:48px;
+    right:50%;
+    transform: translateX(168px);
+}
+
+.linkFooter {
+    height : 349px;
+    background-color:#007AB7;
+    position:relative;
+}
+.fMark {
+    display:flex;
+    margin:0 auto;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.fLink {
+    width: 195px;
+    height: 167px;
+    margin: 0 auto 80px;
+}
+.fText {
+    font-size: 12px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    margin-top: 6px;
+    margin-bottom: 12px; 
+}
+.footerSnsIcon{
+    display: inline-flex;
+    gap: 11px;
+    position: absolute;
+    top: 271px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.footerLogo {
+    width: 71px;
+    height: 28px;
+    position: absolute;
+    top: 275px;
+    left: 50%;
+    transform: translateX(-168px);
+}
+
+.footerLogo img {
+    width: 71px;
+    height: auto;
+    display: block;
+}
+.cRight {
+    text-align: center;
+    border-top: 1px solid #03A9F4;
+    height: 34px;
+    padding-top: 5px;
+    color: #ffffff;
+    font-size: 10px;
+    font-family: 'Noto Sans JP';
+}
+
+/*ローディング*/
+ /* 回転の動き */
+.loading {
+  width: 100%;
+  height: 100vh;/* 【確認】100vhに直す？ */
+  background-color: #007AB7; /* 背景を青に */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 👈 【追加】JavaScriptで opacity: 0 になったときに 0.5秒でフェードアウトさせる */
+  /* JavaScriptのsetTimeout(500)と一致させる */
+  transition: opacity 2.0s ease-in-out; 
+  
+  z-index: 9999; /* 他のコンテンツの上に確実に表示 */
+  position: fixed; /* 画面に固定 */
+  top: 0;
+  left: 0;
+}
+
+.loadingLogo {
+  width: 287px;
+  height: 117px;
+  margin: 0 auto;
+  animation: blink 3.5s infinite; /* アニメーションを繰り返す */
+}
+
+/* 点滅アニメーション */
+@keyframes blink {
+  0%   { opacity: 1; }   /* 見える */
+  50%  { opacity: 0.1; }   /* 完全に消えるのではなく少し残すか、0にする */
+  100% { opacity: 1; }   /* 見える */
+}
+
+/* パンくずナビゲーション */
+/* ナビゲーション全体のコンテナ */
+.breadcrumbNav {
+    /* 必要に応じて背景やパディングなどを設定 */
+    padding: 10px 0;
+    background-color: #f8f8f8; 
+}
+
+/* リスト全体 */
+.breadcrumbNav ul {
+    list-style: none;
+    display: flex;          /* 横並び */
+    gap: 8px;               /* 隙間調整 */
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+/* 各リスト項目 */
+.breadcrumbNav li {
+    position: relative;
+}
+
+/* リンク */
+.breadcrumbNav a {
+    color: #000;      /*デフォ青いから黒に！*/
+    text-decoration: none; /* デフォの下線消す */
+}
+
+.breadcrumbNav a:hover {
+   color: rgba(0, 0, 0, 0.25); /* ホバーしたら透明度アップ */
+}
+/* li の後ろに > を入れる */
+.breadcrumbNav li + li::before {
+    content: ">";
+    margin: 0 8px;
+    color: #000;
+}
+
+#drawer {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25); /* 黒の25%透明 */
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+/* ハンバーガーの開閉部分 */
+.hamburger {
+    flex: 0 0 48px;
+    position: fixed;
+    top: 4px;
+    right: 4px;
+    z-index: 100;
+    /* zは100でなくても良いが入れないと背景に隠れます。 */
+
+}
+
+/* ドロワー部分 */
+#drawer {
+    background-color: #007AB7;
+    width: 225px;
+    height: 667px;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    position: fixed;
+    top: 0;
+    right: -225px;
+    transition: transform 0.3s;
+    z-index: 200;
+}
+/* ドロワー開閉*/
+#drawer.show {
+    transform: translateX(-225px); /* ←右から出す */
+}
+#wrapper {
+    transition: transform 0.3s;
+}
+#wrapper.show {
+    transform: translateX(-225px);  /* ←画面を左へ押し出す */
+}
+.dTop {
+    display: flex;
+    margin: 4px 4px 80px 12px;
+}
+.dLogo {
+    width: 101px;
+    height: 40px;
+    margin-right: 60px;
+    transform: translateY(4px);
+}
+.dIcon {
+    flex: 0 0 48px;
+}
+
+.dList {
+    display: block;
+}
+
+.dItem a {
+    display: inline-block;
+    /* 文字幅＝要素幅にするため*/
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    /* 下線 */
+}
+.itemA {
+    margin-bottom: 60px;
+}
+
+.itemB {
+    margin-bottom: 40px;
+}
+
+.itemC {
+    margin-bottom: 20px;
+}
+/* ドロワー部分終了 */
+
+/*   PC用のメディアクエリ 画面幅768px以上に適用させるp198 p256*/
+@media screen and (min-width: 768px) {
+    
+
+    .taipeiPage header {
+        background: url(../images/taipeiHeloPC.png); 
+        background-size: cover;
+        width: 100%; /* PC版でも幅いっぱいに広げる */
+        height: 90vh;
+        
+    }
+
+
+    .mainLogo {
+        left: 250px;
+        top: 90px;
+    }
+    .title1 {
+        /* 背景画像の設定 */
+        background: url(../images/redFrame.png) no-repeat center bottom;
+        background-size: contain;
+        text-align: center;
+        padding-bottom: 20px; /* 下の線と文字が被らないように調整 */
+        background-position: left center; /* 画像を左側に配置 */
+        padding-left: 20px;
+        }
+
+    .englishText {
+        font-size: 28px;
+        
+    }
+
+    .japaneseText {
+        font-size: 16px;
+        
+    }
+
+    .socialIcons {
+        /* アイコン全体を縦に並べるためのFlexbox設定 */
+        display: flex;
+        flex-direction: column; /* 縦並び */
+        align-items: flex-start; /* 左寄せ */
+        position: absolute; /* 親要素を基準に配置する場合 */
+        bottom: 40px; /* 例として上からの位置 */
+        left: 50px; /* 例として左からの位置 */
+        z-index: 10; /* 他のコンテンツの上に表示 */
+    }
+    .socialIcons a {
+        margin-bottom: 30px; /* アイコン間の縦の間隔 */
+        display: block;
+    }
+
+    .topSec  {
+        color: #ffffff;
+        position: absolute;
+        bottom: 0;
+        right: 60px;   
+    }
+
+    .AttrctionSec  {
+        width: 100%; /* モバイルの固定幅を解除し、コンテンツを広くする */
+        max-width: 1366px; /* PC版で最大幅を設定*/
+    }
+
+    /* --- 九份ブロック ---------------------- */
+    .attractionTitle {
+    font-size: 28px;
+    margin-bottom: 20px;
+    }
+
+    .MainImageBox {
+    width: 50%; 
+    }
+    .MainImageBox img {
+        width: 100%;
+    }
+    .AttrctionSec {
+    text-align: left;
+    margin-bottom: 50px;
+    }
+    .AttractionContent {/* メイン画像 + 説明文 横並び */
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 0px;
+    }
+
+    /* 右側のテキスト部分（九份） */
+    .AttractionText {
+        background: #d8e6ef;
+        padding: 10px;
+        width: 50%;
+        line-height: 1.8;
+        margin-top: 30px;
+        margin-bottom: 0;
+        height: 360px;
+    }
+    
+    .subGazou {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    width: 50%;
+    }
+
+    .subGazou img {
+        width: 48%;
+        object-fit: cover;
+    }
+        /* おすすめ時間の枠 */
+    .AttrctionSec > p {
+        background: #d8e6ef;
+        width: fit-content;
+        padding: 15px 20px;
+        border-radius: 4px;
+        margin-top: 10px;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+   
+    /* ハンバーガーメニューの消去 */
+    .hamburger {
+        display: none;
+    }
+
+    /* トップへ戻るボタン */
+    .toTopIcon {
+        position: fixed; 
+        right: 20px; 
+        bottom: 20px; 
+        z-index: 999;  
+        transform: none; /* モバイル版の変な横ズレをリセット */
+    }
+    .AttrctionSec h1 {
+        text-align: left;
+    }
+    /* ドロワー　PC版*/
+    .drawer {
+        width: 100%;
+
+    }
+    .dIcon {
+        display: none;
+    }
+    .dItem itemA {
+        display: none;
+    }
+    .dList {
+        list-style: none;
+        padding: 0; /* リスト全体の左側の余白を消す */
+        margin: 0; /* リスト全体の上、下、左、右の余白を消す */
+        position: fixed;
+        top: 0px;
+        left: 0;
+        right: 0px;
+        display: flex;
+        justify-content: flex-end;
+        
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.25);
+        height: 94px;
+        z-index: 1000;
+    }
+    .dItem {
+        margin-right: 20px; 
+        margin-top: 30px;
+    }
+    .dItem a {
+        border-bottom: none;
+    }
+    .itemA {
+        display: none; 
+    }
+    .dItem:last-child {
+        margin-right: 0;
+    }
+    .topSec {
+        line-height: 19.2px;
+        margin-bottom: 10px;
+    }
+    .kyuufunContainer {
+        display: flex;
+    }
+    hr {
+        width: 480px;
+    }
+
+}
