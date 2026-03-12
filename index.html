@@ -14,6 +14,7 @@
     <!-- ヘッダーは見出し。タイトルとこのサイトのコンセプト説明 -->
     <header>
         <h1 class="hTitle">ポートフォリオ</h1>
+        <a class="card-link" href="https://masaakisuegara.github.io/tree/main/reformWebSite" target="_blank">HPのGitHubPagesはこちら</a>
         <div class="hBlock">
             <div class="hLeft">
                 <div class="hName article"> 末柄 祐明</div>
@@ -195,7 +196,7 @@
                     <span class="triMark" id="triMark6">▼</span>
                     <div class="cardTitle">
                         <p class="subArticle">くじ引き</p>
-                        <p>かかった時間：4時間</p>
+                        <p>かかった時間：制作4時間、MySQLのDB作成(XREA含む):3時間</p>
                     </div>
                     <span class="cardExp" id="expFT">+100Exp</span>
                 </div>
@@ -204,8 +205,9 @@
                     <p class="cardText">同一の抽選処理をJavaScript・PHP・MySQLの3レイヤーで実装し、1画面で動作比較できる構成とした。<br>
                     PHP版はfetch()によるJSON通信でサーバー側処理の結果を非同期取得する構造。DB版はPHP側で抽選した結果をキーにDBを検索し、紐づく運勢を返す。<br>
                     抽選結果はJSONファイルに保存する仕組みも実装した。</p>
-                    <p class="cardView sentenceArticle">▷ 課題点</p>
-                    <p class="cardText">現状の抽選は一様乱数のため、配列の要素数で出現頻度を調整する簡易的な重み付けにとどまっている。</p>
+                    <p class="cardView sentenceArticle">▷ 苦労・課題点</p>
+                    <p class="cardText">DBを用いた結果の参照はローカルで機能する組み方で作成した後にXREAへ移行しようとした際、プログラムの書き換え必要箇所が把握できず<br>
+                    DB作成以上に時間を費やしたため次はWebのDBを使う前提の設計を組みたい。</p>
                     <div class="card-links">
                         <a class="card-link" href="otherCreate/fukutameshi/index.html" target="_blank">▷ デモを見る</a>
                         <a class="card-link" href="https://github.com/MasaakiSuegara/MasaakiSuegara.github.io/tree/main/luckyColor" target="_blank">▷ GitHub</a>
