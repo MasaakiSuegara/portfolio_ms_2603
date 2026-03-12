@@ -1,0 +1,565 @@
+@charset "UTF-8";
+
+/* =====================
+   基本
+===================== */
+body {
+    margin: 0;
+    background-color:rgba(223,232,216,0.3) ;
+    color: #111111;
+    font-family: "MS PGothic", "DotGothic16", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* =====================
+   ナビ：左に固定
+   position:fixed でスクロールに関係なく左端に張り付く。
+   height:100vh で画面の高さいっぱいタイルが敷き詰められる。
+   overflow-y:auto でメニューが多くなってもスクロールできる。
+===================== */
+.retroNav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 2px solid #111111;
+    padding: 16px;
+    box-sizing: border-box;
+    background-image: url(../images/navTile.png);
+    background-repeat: repeat;
+    background-size: 16px 16px;
+}
+
+.navTitle {
+    margin-top: 0;
+    border: 2px solid #111111;
+    padding: 6px;
+    background-color: #fff8c8;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.15em;
+}
+
+.navList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.retroLink {
+    margin-bottom: 8px;
+}
+
+.retroLink:hover {
+    border-bottom: 1px solid #000000;
+}
+
+.navList a {
+    color: #0033aa;
+    text-decoration: none;
+    border-bottom: 1px solid #0033aa;
+}
+
+/* =====================
+   ラッパー：navの幅分だけ右にずらす
+   fixedのnavはレイアウトの流れから外れるため、
+   margin-leftで他の要素を手動でずらす必要がある。
+===================== */
+.retroWrapper {
+    margin-left: 240px;
+}
+
+/* =====================
+   ヘッダー
+===================== */
+.retroTitle {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    border: 2px solid #111111;
+    padding: 8px;
+    background-color: #fff8c8;
+    text-align: center;
+}
+
+.marqueeOuter {
+    overflow: hidden;
+    border: 2px solid #111111;
+    background-color: #111111;
+    color: #f5f5f5;
+    white-space: nowrap;
+}
+
+.marqueeInner {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marqueeLoop 14s linear infinite;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@keyframes marqueeLoop {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.retroCatchCopy {
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    box-sizing: border-box;
+}
+
+/* =====================
+   メインコンテンツ共通
+===================== */
+.retroContent {
+    padding: 16px;
+    background-image: url(../images/mainTile.png);
+    background-repeat: repeat;
+    background-size: 32px 32px;
+}
+
+.retroSection {
+    border: 2px solid #111111;
+    padding: 12px;
+    margin-bottom: 16px;
+    background-color: #fffef2;
+}
+
+.retroSection h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #111111;
+    padding-bottom: 4px;
+    font-size: 20px;
+    letter-spacing: 0.08em;
+}
+
+/* セクションごとにh2下線の色で区別（クラス追加なし・id活用） */
+#profile h2   { border-bottom-color: #5577cc; }
+#works h2     { border-bottom-color: #449944; }
+#history h2   { border-bottom-color: #cc8833; }
+#link h2      { border-bottom-color: #997799; }
+
+.updateList {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* ===================
+   カウンター
+===================== */ 
+.countSection {
+    border: 2px solid #111111;
+    padding: 12px;
+    margin-bottom: 16px;
+    background-color: #fffef2;
+}
+ 
+/* カウンター全体：黒い計器ボックス */
+.counterBox {
+    border: 2px solid #111111;
+    padding: 16px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+ 
+.counterLabel {
+    color: #aaccaa;
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.1em;
+}
+ 
+/* 数字を横並びにするコンテナ */
+.counterDisplay {
+    display: inline-flex;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+ 
+/* 1桁ずつのセル：スロットの窓枠イメージ */
+.counterDigit {
+    width: 44px;
+    height: 64px;
+    background-color: #000000;
+    border: 2px solid #445544;
+    border-top-color: #223322;
+    border-bottom-color: #667766;
+    color: #44ff44;
+    font-family: "Courier New", monospace;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 64px;
+    text-align: center;
+}
+ 
+.counterSub {
+    color: #aaccaa;
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.05em;
+}
+ 
+.kiribanMessage {
+    color: #ffdd44;
+    font-size: 15px;
+    margin: 0 0 4px 0;
+}
+ 
+.kiriban {
+    color: #ff6666;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+ 
+.counterNote {
+    color: #778877;
+    font-size: 13px;
+    margin: 8px 0 0 0;
+}
+ 
+.hidden {
+    display: none;
+}
+ 
+/* =====================
+   アンケート集計
+===================== */
+.visitLog {
+    border: 2px solid #000000;
+    margin-bottom: 16px;
+    background-color: #fffef2;
+}
+
+.visitor {
+    border-bottom: 2px solid #000000;
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #fff8c8;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+/* 左右横並びのラッパー */
+.surveyInner {
+    display: flex;
+    gap: 0;
+}
+
+/* 左：フォームエリア */
+.surveyFormArea {
+    width: 240px;
+    flex-shrink: 0;
+    padding: 16px;
+    border-right: 2px solid #000000;
+}
+
+.surveyLead {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 12px 0;
+}
+
+.purposeRadio {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.purpose {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid #aaa;
+    padding: 6px 10px;
+    background-color: #fafaf0;
+}
+
+.purpose:hover {
+    background-color: #fff8c8;
+}
+
+.surveySubmit {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border: 2px solid #000000;
+    background-color: #fff8c8;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+}
+
+.surveySubmit:hover {
+    background-color: #ffe080;
+}
+
+/* グラフエリア：縦方向を中央に */
+.surveyResult {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ 
+.surveyResultTitle {
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+}
+ 
+/* 1行分（ラベル + バー + 数値） */
+.barRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+ 
+.barLabel {
+    width: 90px;
+    font-size: 15px;
+    flex-shrink: 0;
+    text-align: right;
+}
+ 
+/* バーの外枠（トラック） */
+.barTrack {
+    flex: 1;
+    height: 26px;
+    border: 2px solid #111111;
+    background-color: #e8e8d8;
+}
+ 
+/* バーの中身（PHPでwidthをインライン指定） */
+.barFill {
+    height: 100%;
+    background-color: #4488cc;
+    min-width: 2px;
+}
+ 
+.barCount {
+    width: 46px;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+ 
+/* =====================
+   掲示板
+===================== */
+.commetBoard {
+    border: 2px solid #000000;
+    margin-bottom: 16px;
+    background-color: #fffef2;
+}
+
+.onlineBoard {
+    border-bottom: 2px solid #000000;
+    padding: 4px 8px;
+    font-weight: bold;
+    background-color: #fff8c8;
+}
+
+/* 投稿エリア */
+.boardInputArea {
+    padding: 12px;
+    border-bottom: 2px solid #000000;
+    background-color: #fafaea;
+}
+
+.onlineTitle {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.handleNameLabel {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.commentLabel {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.handleName {
+    display: block;
+    margin-top: 4px;
+    border: 2px solid #000000;
+    padding: 4px;
+    width: 200px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.messageWindow {
+    display: block;
+    margin-top: 4px;
+    width: 100%;
+    min-height: 80px;
+    font-size: 15px;
+    border: 2px solid #181820;
+    padding: 8px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    resize: vertical;
+    white-space: pre-wrap;
+}
+
+.submitBt {
+    display: block;
+    margin-top: 8px;
+    padding: 8px 24px;
+    height: 40px;
+    border: 2px solid #000000;
+    text-align: center;
+    background-color: #fff8c8;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.submitBt:hover {
+    background-color: #ffe080;
+}
+
+/* ログエリア */
+.boardLogArea {
+    padding: 12px;
+}
+
+.boardLogTitle {
+    margin: 0 0 8px 0;
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+}
+
+.boardLog {
+    display: block;
+    width: 100%;
+    min-height: 500px;
+    font-size: 15px;
+    border: 2px solid #000000;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: #fafaf5;
+    resize: vertical;
+    line-height: 1.8;
+}
+
+/* =====================
+   リセット（収納式・JS開閉）
+===================== */
+.risetBooth {
+    border: 2px solid #cc4444;
+    border-bottom: none;
+    padding: 6px 10px;
+    font-weight: bold;
+    background-color: #ffe0e0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.risetBooth:hover {
+    background-color: #ffcccc;
+}
+
+.risetFunction {
+    display: none;
+    border: 2px solid #cc4444;
+    padding: 10px;
+    background-color: #fff5f5;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.risetFunction.isOpen {
+    display: flex;
+}
+
+.risetFunction button {
+    border: 2px solid #cc4444;
+    padding: 6px 12px;
+    background-color: #fff8c8;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.risetFunction button:hover {
+    background-color: #ffe080;
+}
+
+/* =====================
+   フッター
+===================== */
+footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #111111;
+    font-size: 14px;
+}
+
+/* =====================
+   レスポンシブ
+===================== */
+@media screen and (max-width: 768px) {
+    /* スマホはfixedを解除して上部に配置 */
+    .retroNav {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #111111;
+        overflow-y: visible;
+    }
+
+    .retroWrapper {
+        margin-left: 0;
+    }
+
+    .retroTitle {
+        font-size: 28px;
+    }
+
+    .retroCatchCopy {
+        font-size: 14px;
+    }
+
+    /* アンケートはスマホで縦積み */
+    .surveyInner {
+        flex-direction: column;
+    }
+
+    .surveyFormArea {
+        width: auto;
+        border-right: none;
+        border-bottom: 2px solid #000000;
+    }
+
+    .barLabel {
+        width: 60px;
+    }
+}
